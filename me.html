@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fff1d6">
+<title>Pratyush Patra | Hey, that's me</title>
+<meta name="description" content="Pratyush Patra (ionix.fx), graphic designer and vector artist. See my work, services, and message me fast on WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pratyush Patra (ionix.fx) | Graphic Designer & Vector Artist">
+<meta property="og:description" content="Bold graphic design and clean vector art. See my work and book a project.">
+<meta property="og:image" content="images/preview.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root{
+    --ink:#121212; --paper:#fff1d6; --line:#121212; --txt:#121212;
+    --yellow:#ffd23f; --pink:#ff8fc2; --blue:#7cc8ff; --green:#86e89a; --orange:#ff9f5a; --lilac:#cdaeff; --white:#fffdf7;
+    --dots:rgba(18,18,18,.16);
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:"Trebuchet MS","Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  }
+  :root[data-theme="dark"]{
+    --paper:#17171b; --white:#26262d; --line:#f5efe0; --txt:#f5efe0; --dots:rgba(255,255,255,.09);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);color:var(--txt);background:var(--paper);
+    background-image:radial-gradient(var(--dots) 1.4px,transparent 1.6px);background-size:22px 22px;
+    padding:max(18px,env(safe-area-inset-top)) 16px 40px;line-height:1.45;overflow-x:hidden;transition:background-color .4s;
+  }
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:4px solid var(--blue);outline-offset:3px}
+  .page{max-width:1020px;margin:0 auto}
+
+  .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:10px}
+  .brand{font-weight:900;font-size:1.15rem;letter-spacing:-.02em;background:var(--ink);color:var(--paper);padding:8px 16px;border-radius:999px;transform:rotate(-2deg);cursor:pointer;user-select:none;border:2px solid var(--line)}
+  :root[data-theme="dark"] .brand{background:var(--yellow);color:var(--ink)}
+  .brand b{color:var(--yellow)}
+  :root[data-theme="dark"] .brand b{color:var(--ink)}
+  .topr{display:flex;gap:10px;align-items:center}
+  .pill{font-family:var(--mono);font-size:.78rem;font-weight:700;border:3px solid var(--line);background:var(--white);color:var(--txt);padding:7px 14px;border-radius:999px;box-shadow:3px 3px 0 var(--line);display:flex;align-items:center;gap:8px}
+  button.pill{cursor:pointer;font-family:var(--mono)}
+  button.pill:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--line)}
+  .live{width:10px;height:10px;border-radius:50%;background:#16c64f;border:2px solid var(--ink);animation:blink 1.6s infinite}
+  @keyframes blink{50%{opacity:.25}}
+
+  .bento{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;grid-auto-flow:dense}
+  .card{
+    --c:var(--white);--rot:0deg;color:var(--ink);
+    background:var(--c);border:3px solid var(--line);border-radius:26px;padding:22px;position:relative;
+    box-shadow:6px 6px 0 var(--line);transform:rotate(var(--rot));
+    transition:transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s,background .45s;
+    min-height:170px;
+  }
+  .card.w{color:var(--txt)}
+  .card:nth-child(odd){--rot:-.6deg}
+  .card:nth-child(even){--rot:.6deg}
+  a.card:hover,.card.hov:hover{transform:rotate(0) translate(-3px,-3px);box-shadow:10px 10px 0 var(--line)}
+  a.card:active,.card.hov:active{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--line)}
+  .s2{grid-column:span 2}.s4{grid-column:span 4}.r2{grid-row:span 2}
+
+  .tag{display:inline-block;font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    background:var(--ink);color:var(--paper);padding:4px 10px;border-radius:8px;margin-bottom:12px}
+  :root[data-theme="dark"] .card.w .tag{background:var(--yellow);color:var(--ink)}
+  :root[data-theme="dark"] .card:not(.w) .tag{color:#fff1d6}
+
+  .intro{--c:var(--yellow);display:flex;flex-direction:column;justify-content:space-between}
+  .intro h1{font-size:clamp(2.3rem,7vw,4rem);line-height:.98;font-weight:900;letter-spacing:-.045em}
+  .intro h1 span{display:inline-block;background:#fffdf7;border:3px solid var(--ink);border-radius:14px;padding:0 12px;transform:rotate(-2deg);margin-top:6px}
+  .role{font-size:1.25rem;font-weight:800;margin-top:18px}
+  .role em{font-style:normal;background:var(--ink);color:var(--yellow);padding:2px 10px;border-radius:8px}
+  .caret{display:inline-block;width:3px;height:1.1em;background:var(--ink);margin-left:3px;vertical-align:-3px;animation:blink 1s steps(1) infinite}
+  .intro p{margin-top:14px;font-size:1.02rem;max-width:460px}
+  .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+
+  .avatar{--c:var(--pink);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px}
+  .pic{width:104px;height:104px;border-radius:50%;border:3px solid var(--ink);background:#fffdf7;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900;overflow:hidden;box-shadow:4px 4px 0 var(--ink)}
+  .pic img{width:100%;height:100%;object-fit:cover}
+  .avatar b{font-size:1.05rem}
+  .avatar small{font-family:var(--mono);font-weight:700}
+
+  .clock{--c:var(--ink);color:var(--paper);display:flex;flex-direction:column;justify-content:space-between}
+  :root[data-theme="dark"] .clock{--c:#000;color:#f5efe0}
+  .clock .tag{background:var(--yellow);color:var(--ink)!important;align-self:flex-start}
+  .time{font-family:var(--mono);font-size:clamp(1.9rem,5.6vw,2.6rem);font-weight:800;letter-spacing:-.04em;line-height:1}
+  .time i{font-style:normal;font-size:.9rem;margin-left:4px;color:var(--yellow)}
+  .greet{font-weight:700;opacity:.85;font-size:.92rem}
+
+  .now{--c:var(--green)}
+  .now ul{list-style:none;display:grid;gap:10px}
+  .now li{display:flex;gap:10px;align-items:flex-start;font-weight:700}
+  .now li i{flex:none;width:22px;height:22px;border:3px solid var(--ink);border-radius:7px;background:#fffdf7;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:.75rem;margin-top:1px}
+  .badge{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:#fffdf7;border:3px solid var(--ink);border-radius:999px;padding:6px 14px;font-family:var(--mono);font-weight:800;font-size:.78rem}
+
+  /* stats */
+  .stats{--c:var(--blue);display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-content:center;text-align:center}
+  .stats .tag{grid-column:1/-1;justify-self:start}
+  .stats b{display:block;font-size:clamp(1.6rem,5vw,2.4rem);font-weight:900;letter-spacing:-.04em;line-height:1}
+  .stats small{font-family:var(--mono);font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em}
+
+  /* work */
+  .work h3,.svc h3,.msg h3{font-size:1.35rem;font-weight:900;letter-spacing:-.02em;margin-bottom:12px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .tile{aspect-ratio:1/1;border:3px solid var(--line);border-radius:18px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--mono);font-weight:800;font-size:.72rem;padding:8px;cursor:default;background:var(--tc);color:var(--ink);box-shadow:4px 4px 0 var(--line);transition:transform .2s;position:relative}
+  .tile:nth-child(1){--tc:var(--pink)}.tile:nth-child(2){--tc:var(--yellow)}.tile:nth-child(3){--tc:var(--lilac)}
+  .tile.ok{cursor:zoom-in;padding:0}
+  .tile.ok:hover{transform:translateY(-4px) rotate(-1.5deg)}
+  .tile img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* services */
+  .svc ul{list-style:none;display:grid;gap:10px}
+  .svc li{display:flex;justify-content:space-between;align-items:center;gap:10px;border:3px solid var(--line);border-radius:14px;padding:10px 14px;font-weight:800;background:var(--paper);box-shadow:3px 3px 0 var(--line)}
+  .svc li span{font-family:var(--mono);font-size:.72rem;background:var(--yellow);color:var(--ink);padding:3px 9px;border-radius:999px;border:2px solid var(--ink);white-space:nowrap}
+
+  .plat{display:flex;flex-direction:column;justify-content:space-between;min-height:190px}
+  .plat .ico{width:54px;height:54px;border-radius:16px;border:3px solid var(--ink);background:#fffdf7;display:flex;align-items:center;justify-content:center;box-shadow:3px 3px 0 var(--ink)}
+  .plat .ico svg{width:28px;height:28px}
+  .plat h3{font-size:1.25rem;font-weight:900;letter-spacing:-.02em}
+  .plat small{font-family:var(--mono);font-weight:700;font-size:.74rem;word-break:break-all;display:block}
+  .plat .go{position:absolute;top:18px;right:18px;width:34px;height:34px;border:3px solid var(--ink);border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;transition:transform .3s}
+  a.plat:hover .go{transform:rotate(-45deg)}
+  .go svg{width:16px;height:16px}
+  .ig{--c:var(--pink)}.wa{--c:var(--green)}.ml{--c:var(--blue)}.pf{--c:var(--orange)}
+
+  .tools{--c:var(--lilac)}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chips span{border:3px solid var(--ink);background:#fffdf7;border-radius:999px;padding:7px 15px;font-weight:800;font-size:.9rem;box-shadow:3px 3px 0 var(--ink);transition:transform .2s}
+  .chips span:hover{transform:translateY(-4px) rotate(-3deg)}
+
+  .copy{--c:var(--orange)}
+  .copy .row{display:grid;gap:10px}
+  .copy .btn{background:#fffdf7;justify-content:space-between;font-size:.85rem;padding:10px 16px}
+
+  .msg input,.msg textarea,.msg select{width:100%;font:inherit;font-weight:700;border:3px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--paper);color:var(--txt);outline:none;margin-bottom:10px;resize:none}
+  .msg input:focus,.msg textarea:focus,.msg select:focus{box-shadow:4px 4px 0 var(--line)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .btn{display:inline-flex;align-items:center;gap:10px;font:inherit;font-weight:900;font-size:1rem;background:var(--green);color:var(--ink);border:3px solid var(--ink);border-radius:999px;padding:12px 22px;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+  .card.w .btn{border-color:var(--line);box-shadow:4px 4px 0 var(--line)}
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+  .btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+  .btn svg{width:18px;height:18px}
+  .btn.alt{background:#fffdf7}
+  .hint{font-family:var(--mono);font-size:.72rem;margin-top:10px;font-weight:700;opacity:.7}
+
+  .strip{--c:var(--ink);color:var(--paper);padding:0;overflow:hidden;min-height:0;display:flex;align-items:stretch}
+  :root[data-theme="dark"] .strip{--c:#000;color:#f5efe0}
+  .strip .btn{border-radius:0;border:0;border-right:3px solid var(--paper);box-shadow:none;background:var(--yellow);flex:none;padding:16px 22px}
+  .strip .btn:hover,.strip .btn:active{transform:none;box-shadow:none;background:var(--pink)}
+  .marq{overflow:hidden;flex:1;display:flex;align-items:center}
+  .marq div{display:flex;gap:28px;width:max-content;animation:run 24s linear infinite;padding:16px 0}
+  .marq span{font-weight:900;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;font-size:.95rem}
+  .marq span:nth-child(even){color:var(--yellow)}
+  @keyframes run{to{transform:translateX(-50%)}}
+
+  footer{text-align:center;font-family:var(--mono);font-weight:700;font-size:.78rem;margin-top:30px}
+
+  .card{animation:pop .6s cubic-bezier(.3,1.5,.5,1) both}
+  @keyframes pop{from{opacity:0;transform:scale(.85) translateY(30px)}}
+
+  /* lightbox + toast + confetti */
+  #lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:50;padding:20px;cursor:zoom-out}
+  #lb.on{display:flex}
+  #lb img{max-width:100%;max-height:90vh;border:4px solid #fff1d6;border-radius:16px}
+  #toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,120px);background:var(--ink);color:var(--yellow);font-family:var(--mono);font-weight:800;padding:10px 20px;border-radius:999px;border:3px solid var(--yellow);transition:transform .35s cubic-bezier(.3,1.6,.5,1);z-index:60}
+  #toast.on{transform:translate(-50%,0)}
+  .cf{position:fixed;top:-20px;width:10px;height:14px;z-index:70;pointer-events:none;animation:fall linear forwards}
+  @keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+
+  /* ===== UI effects ===== */
+  .page{position:relative;z-index:1}
+  .floaters{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .floaters i{position:absolute;display:block;opacity:.55;animation:drift var(--d,14s) ease-in-out infinite alternate;animation-delay:var(--dl,0s)}
+  .floaters .st{width:34px;height:34px;background:var(--yellow);border:3px solid var(--ink);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+  .floaters .ci{width:26px;height:26px;border-radius:50%;background:var(--pink);border:3px solid var(--ink)}
+  .floaters .sq{width:24px;height:24px;border-radius:7px;background:var(--blue);border:3px solid var(--ink)}
+  .floaters .ring{width:34px;height:34px;border-radius:50%;border:5px solid var(--green)}
+  @keyframes drift{
+    from{transform:translate(0,0) rotate(0deg)}
+    to{transform:translate(var(--x,30px),var(--y,-60px)) rotate(var(--r,200deg))}
+  }
+
+  /* name shimmer */
+  .intro h1 span{position:relative;overflow:hidden}
+  .intro h1 span::after{content:"";position:absolute;top:-10%;left:-60%;width:40%;height:120%;
+    background:linear-gradient(100deg,transparent,rgba(255,210,63,.85),rgba(255,143,194,.7),transparent);
+    transform:skewX(-20deg);animation:shine 3.6s ease-in-out infinite}
+  @keyframes shine{0%,55%{left:-60%}100%{left:130%}}
+
+  /* ===== Minecraft pixel effects ===== */
+  .xp{position:fixed;top:0;left:0;right:0;height:12px;z-index:90;background:#1c1c1c;border-bottom:3px solid #000;pointer-events:none}
+  .xp i{display:block;height:100%;width:0;background:repeating-linear-gradient(90deg,#7dff3a 0 14px,#3f9a17 14px 16px);box-shadow:inset 0 -3px 0 rgba(0,0,0,.25)}
+  .pxt,.pxb{position:fixed;pointer-events:none;z-index:80;border:2px solid rgba(0,0,0,.6)}
+  .pxt{width:10px;height:10px;animation:pxfade .65s steps(6) forwards}
+  @keyframes pxfade{to{opacity:0;transform:scale(.3)}}
+  .pxb{left:0;top:0;width:10px;height:10px}
+  .pxov{position:absolute;inset:0;border-radius:23px;overflow:hidden;display:grid;pointer-events:none;z-index:5}
+  .pxov b{display:block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.28),inset 3px 3px 0 rgba(255,255,255,.14);transition:opacity .35s steps(4),transform .35s steps(4)}
+  .card.px{animation:none}
+
+  /* scroll reveal */
+  .card.rv{animation:none;opacity:0;translate:0 46px;
+    transition:opacity .7s ease,translate .7s cubic-bezier(.3,1.4,.5,1),transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s,background .45s}
+  .card.rv.in{opacity:1;translate:0 0}
+
+  .card.tilting{transition:transform .08s linear,box-shadow .25s,background .45s,opacity .7s,translate .7s}
+
+  @media (max-width:760px){
+    .bento{grid-template-columns:repeat(2,1fr);gap:14px}
+    .s2,.s4{grid-column:span 2}.r2{grid-row:auto}
+    .card{padding:18px;box-shadow:5px 5px 0 var(--line)}
+    .plat{min-height:170px}
+    .strip .btn{padding:14px 16px;font-size:.9rem}
+    .two{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .card{animation:none}.marq div,.live,.caret,.cf,.floaters i,.intro h1 span::after{animation:none}html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<div class="floaters" aria-hidden="true">
+  <i class="st" style="left:6%;top:18%;--d:15s;--x:40px;--y:-70px"></i>
+  <i class="ci" style="left:90%;top:12%;--d:12s;--x:-30px;--y:60px;--dl:-3s"></i>
+  <i class="sq" style="left:80%;top:55%;--d:17s;--x:-50px;--y:-40px;--r:-160deg;--dl:-6s"></i>
+  <i class="ring" style="left:4%;top:62%;--d:13s;--x:35px;--y:50px;--dl:-2s"></i>
+  <i class="st" style="left:48%;top:88%;--d:16s;--x:-40px;--y:-50px;--r:-220deg;--dl:-8s"></i>
+  <i class="ci" style="left:30%;top:5%;--d:18s;--x:50px;--y:40px;--dl:-5s"></i>
+</div>
+<div class="xp" aria-hidden="true"><i id="xpf"></i></div>
+<div class="page">
+
+  <div class="top">
+    <div class="brand" id="logo" title="Psst... click me 5 times">ionix<b>.</b>fx</div>
+    <div class="topr">
+      <button class="pill" id="theme" type="button" aria-label="Toggle dark mode">&#9789; Dark</button>
+      <div class="pill"><span class="live"></span><span>ONLINE</span></div>
+    </div>
+  </div>
+
+  <div class="bento" id="bento">
+
+    <div class="card intro s2 r2">
+      <div>
+        <span class="tag">About me</span>
+        <h1>Hey, I'm <span>Pratyush Patra.</span></h1>
+        <div class="role">I'm a <em id="type"></em><span class="caret"></span></div>
+        <p>I turn ideas into bold graphic designs and clean vector art. This is my little corner of the internet: my work, what I offer, and the quickest way to reach me.</p>
+        <div class="cta">
+          <a class="btn" href="#inquiry">Start a project</a>
+          <a class="btn alt" href="index.html">See my work</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card avatar hov">
+      <div class="pic" id="pic">PP</div>
+      <b>Pratyush Patra</b>
+      <small>@ionix.fx</small>
+    </div>
+
+    <div class="card clock">
+      <span class="tag">My time (India)</span>
+      <div>
+        <div class="time" id="time">--:--<i id="ampm"></i></div>
+        <div class="greet" id="greet">Hello there</div>
+      </div>
+    </div>
+
+    <div class="card now s2 hov">
+      <span class="tag">Right now</span>
+      <ul>
+        <li><i>&#10003;</i><span>Creating new graphic designs and vector art</span></li>
+        <li><i>&#10003;</i><span>Open to new projects and collabs</span></li>
+        <li><i>&#10003;</i><span>Fastest reply: WhatsApp</span></li>
+      </ul>
+      <div class="badge"><span class="live"></span><span id="avail">Booking for projects</span></div>
+    </div>
+
+    <div class="card stats s2 hov" id="stats">
+      <span class="tag">By the numbers</span>
+      <div><b data-n="50" data-s="+">0</b><small>Designs</small></div>
+      <div><b data-n="3" data-s="+">0</b><small>Years</small></div>
+      <div><b data-n="100" data-s="%">0</b><small>Custom</small></div>
+    </div>
+
+    <div class="card work w s4" id="work">
+      <span class="tag">Featured work</span>
+      <h3>A few favourites</h3>
+      <div class="grid3" id="grid3">
+        <div class="tile" data-src="images/work1.jpg">Add images/work1.jpg</div>
+        <div class="tile" data-src="images/work2.jpg">Add images/work2.jpg</div>
+        <div class="tile" data-src="images/work3.jpg">Add images/work3.jpg</div>
+      </div>
+      <div class="hint">Tap a piece to view it larger.</div>
+    </div>
+
+    <div class="card svc w s2 hov">
+      <span class="tag">Services</span>
+      <h3>What I can make for you</h3>
+      <ul>
+        <li>Logo design <span>DM for quote</span></li>
+        <li>Posters &amp; social posts <span>DM for quote</span></li>
+        <li>Vector portraits <span>DM for quote</span></li>
+        <li>Short video edits <span>DM for quote</span></li>
+      </ul>
+    </div>
+
+    <div class="card tools s2 hov">
+      <span class="tag">My toolbox</span>
+      <div class="chips">
+        <span>Alight Motion</span><span>Lightroom</span>
+      </div>
+      <div class="hint" style="margin-top:16px">Edit the list in the code to add more tools.</div>
+    </div>
+
+    <a class="card plat ig" href="https://www.instagram.com/ionix.fx" target="_blank" rel="noopener">
+      <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#121212" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="#121212" stroke="none"/></svg></span>
+      <div><h3>Instagram</h3><small>@ionix.fx</small></div>
+    </a>
+
+    <a class="card plat wa" href="https://wa.me/917428697790" target="_blank" rel="noopener">
+      <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#121212" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></span>
+      <div><h3>WhatsApp</h3><small>+91 74286 97790</small></div>
+    </a>
+
+    <a class="card plat ml" href="mailto:pa8raa@gmail.com">
+      <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#121212" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 7.5l8.5 6 8.5-6"/></svg></span>
+      <div><h3>Email</h3><small>pa8raa@gmail.com</small></div>
+    </a>
+
+    <a class="card plat pf" href="index.html">
+      <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#121212" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="9" cy="9" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg></span>
+      <div><h3>My Work</h3><small>See the portfolio</small></div>
+    </a>
+
+    <div class="card msg w s4" id="inquiry">
+      <span class="tag">Start a project</span>
+      <h3>Tell me what you need</h3>
+      <input id="nm" type="text" placeholder="Your name" autocomplete="name">
+      <div class="two">
+        <select id="sv" aria-label="Service">
+          <option value="">Service</option>
+          <option>Logo design</option><option>Poster / social post</option><option>Vector portrait</option><option>Video edit</option><option>Something else</option>
+        </select>
+        <select id="bd" aria-label="Budget">
+          <option value="">Budget</option>
+          <option>Under Rs 500</option><option>Rs 500 - 2,000</option><option>Rs 2,000 - 5,000</option><option>Rs 5,000+</option><option>Not sure yet</option>
+        </select>
+      </div>
+      <select id="dl" aria-label="Deadline">
+        <option value="">Deadline</option>
+        <option>ASAP</option><option>Within a week</option><option>Within a month</option><option>No rush</option>
+      </select>
+      <textarea id="tx" rows="3" placeholder="Describe your idea..."></textarea>
+      <button class="btn" id="send" type="button">
+        Send on WhatsApp
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <div class="hint">Opens WhatsApp with your message ready to send.</div>
+    </div>
+
+    <div class="card strip s4">
+      <button class="btn" id="shuffle" type="button">Shuffle colors</button>
+      <div class="marq" aria-hidden="true"><div>
+        <span>Design</span><span>Vector</span><span>Create</span><span>Repeat</span>
+        <span>Design</span><span>Vector</span><span>Create</span><span>Repeat</span>
+        <span>Design</span><span>Vector</span><span>Create</span><span>Repeat</span>
+        <span>Design</span><span>Vector</span><span>Create</span><span>Repeat</span>
+      </div></div>
+    </div>
+
+  </div>
+
+  <footer>&copy; <span id="yr"></span> Pratyush Patra &middot; made in India</footer>
+</div>
+
+<div id="lb" role="dialog" aria-label="Image preview"><img alt=""></div>
+<div id="toast">Copied!</div>
+
+<script>
+/* ===== EDIT ME ===== */
+const roles = ["graphic designer", "vector artist", "creator"];
+const availability = "Booking for projects";   // e.g. "Booking for November"
+/* =================== */
+
+const $ = id => document.getElementById(id);
+const store = {
+  get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+};
+const toast = msg => { const t=$('toast'); t.textContent=msg; t.classList.add('on'); clearTimeout(toast.t); toast.t=setTimeout(()=>t.classList.remove('on'),1600); };
+
+/* typing */
+const el = $('type'); let ri=0, ci=0, del=false;
+function tick(){
+  const w = roles[ri]; el.textContent = w.slice(0,ci);
+  if(!del && ci<w.length){ ci++; setTimeout(tick,110); }
+  else if(!del){ del=true; setTimeout(tick,1300); }
+  else if(ci>0){ ci--; setTimeout(tick,55); }
+  else { del=false; ri=(ri+1)%roles.length; setTimeout(tick,250); }
+}
+tick();
+$('avail').textContent = availability;
+
+/* India clock */
+function clock(){
+  const now = new Date();
+  const t = new Intl.DateTimeFormat('en-IN',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',hour12:true}).formatToParts(now);
+  const h = t.find(p=>p.type==='hour').value, m = t.find(p=>p.type==='minute').value;
+  const ap = (t.find(p=>p.type==='dayPeriod')||{value:''}).value.toUpperCase();
+  $('time').innerHTML = h+':'+m+'<i>'+ap+'</i>';
+  const hr = parseInt(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kolkata',hour:'2-digit',hour12:false}).format(now),10)%24;
+  $('greet').textContent = hr<5?'Late night creating':hr<12?'Good morning':hr<17?'Good afternoon':hr<21?'Good evening':'Night owl mode';
+}
+clock(); setInterval(clock,15000);
+
+/* dark mode */
+function setTheme(d){
+  document.documentElement.setAttribute('data-theme', d?'dark':'light');
+  $('theme').innerHTML = d ? '&#9728; Light' : '&#9789; Dark';
+  document.querySelector('meta[name=theme-color]').content = d ? '#17171b' : '#fff1d6';
+  store.set('theme', d?'dark':'light');
+}
+const saved = store.get('theme');
+setTheme(saved ? saved==='dark' : window.matchMedia('(prefers-color-scheme: dark)').matches);
+$('theme').onclick = () => setTheme(document.documentElement.getAttribute('data-theme')!=='dark');
+
+/* count-up stats */
+const nums = [...document.querySelectorAll('[data-n]')];
+function count(){
+  nums.forEach(n=>{
+    const end=+n.dataset.n, s=n.dataset.s||''; let st=null;
+    const step=ts=>{ if(!st) st=ts; const p=Math.min((ts-st)/1200,1); n.textContent=Math.round(end*(1-Math.pow(1-p,3)))+(p===1?s:''); if(p<1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  });
+}
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>{ if(es[0].isIntersecting){ count(); io.disconnect(); } },{threshold:.4});
+  io.observe($('stats'));
+} else count();
+
+/* featured work: show real images when they exist */
+const lb=$('lb'), lbi=lb.querySelector('img');
+document.querySelectorAll('.tile').forEach(t=>{
+  const im=new Image();
+  im.onload=()=>{ t.textContent=''; t.classList.add('ok'); im.alt='Design by Pratyush Patra'; im.loading='lazy'; t.appendChild(im);
+    t.onclick=()=>{ lbi.src=im.src; lb.classList.add('on'); }; };
+  im.src=t.dataset.src;
+});
+lb.onclick=()=>lb.classList.remove('on');
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') lb.classList.remove('on'); });
+
+/* project inquiry -> WhatsApp */
+$('send').onclick=()=>{
+  const name=$('nm').value.trim(), text=$('tx').value.trim();
+  const sv=$('sv').value, bd=$('bd').value, dl=$('dl').value;
+  if(!text && !sv){ $('tx').focus(); return; }
+  let msg='Hi Pratyush, '+(name?'I am '+name+'. ':'');
+  if(sv) msg+='I need: '+sv+'. ';
+  if(bd) msg+='Budget: '+bd+'. ';
+  if(dl) msg+='Deadline: '+dl+'. ';
+  if(text) msg+=text;
+  window.open('https://wa.me/917428697790?text='+encodeURIComponent(msg.trim()),'_blank','noopener');
+};
+
+/* shuffle colors */
+const palette=['--yellow','--pink','--blue','--green','--orange','--lilac'];
+$('shuffle').onclick=()=>{
+  [...document.querySelectorAll('.card')].filter(c=>!c.classList.contains('clock')&&!c.classList.contains('strip')&&!c.classList.contains('w')).forEach(c=>{
+    c.style.setProperty('--c','var('+palette[Math.floor(Math.random()*palette.length)]+')');
+  });
+};
+
+/* easter egg: click logo 5 times */
+let clicks=0, ct;
+$('logo').onclick=()=>{
+  clicks++; clearTimeout(ct); ct=setTimeout(()=>clicks=0,1500);
+  if(clicks>=5){ clicks=0; toast('You found it!');
+    const cols=['#ffd23f','#ff8fc2','#7cc8ff','#86e89a','#ff9f5a','#cdaeff'];
+    for(let i=0;i<70;i++){ const d=document.createElement('div'); d.className='cf';
+      d.style.left=Math.random()*100+'vw'; d.style.background=cols[i%cols.length];
+      d.style.animationDuration=(1.8+Math.random()*1.8)+'s'; d.style.animationDelay=Math.random()*.4+'s';
+      document.body.appendChild(d); setTimeout(()=>d.remove(),4500); }
+  }
+};
+
+/* scroll reveal (only cards below the fold) */
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduce && 'IntersectionObserver' in window){
+  /* cards below the fold are covered in "stone" blocks that get mined away */
+  const stone=['#7f7f7f','#8b8b8b','#6e6e6e','#9a9a9a','#5f5f5f'];
+  const mine=c=>{
+    const ov=c.querySelector('.pxov'); if(!ov) return;
+    ov.querySelectorAll('b').forEach(b=>{ b.style.transitionDelay=Math.random()*700+'ms'; b.style.opacity='0'; b.style.transform='scale(.2)'; });
+    setTimeout(()=>ov.remove(),1600);
+  };
+  const rio=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){ mine(e.target); rio.unobserve(e.target); }
+  }),{threshold:.15});
+  document.querySelectorAll('.card').forEach(c=>{
+    const r=c.getBoundingClientRect();
+    if(r.top>window.innerHeight*0.9){
+      const S=28, cols=Math.ceil(r.width/S), rows=Math.ceil(r.height/S);
+      const ov=document.createElement('div'); ov.className='pxov';
+      ov.style.gridTemplateColumns='repeat('+cols+',1fr)'; ov.style.gridTemplateRows='repeat('+rows+',1fr)';
+      for(let i=0;i<cols*rows;i++){ const b=document.createElement('b'); b.style.background=stone[Math.floor(Math.random()*stone.length)]; ov.appendChild(b); }
+      c.appendChild(ov); c.classList.add('px'); rio.observe(c);
+    }
+  });
+}
+
+/* XP-bar scroll progress */
+const xpf=$('xpf');
+function xp(){ const m=document.documentElement.scrollHeight-window.innerHeight; xpf.style.width=(m>0?Math.min(100,window.scrollY/m*100):0)+'%'; }
+window.addEventListener('scroll',xp,{passive:true}); window.addEventListener('resize',xp); xp();
+
+/* pixel block trail (cursor, or finger drag / scroll on phones) + block-break burst on tap */
+if(!reduce){
+  const bc=['#5aa02c','#7bc74d','#8b5a2b','#6b6b6b','#ffd23f','#7cc8ff','#ff8fc2'];
+  const pick=()=>bc[Math.floor(Math.random()*bc.length)];
+  let last={x:-99,y:-99};
+  function trail(x,y){
+    if(Math.hypot(x-last.x,y-last.y)<16) return; last={x,y};
+    const d=document.createElement('div'); d.className='pxt';
+    d.style.left=Math.round(x/10)*10+'px'; d.style.top=Math.round(y/10)*10+'px'; d.style.background=pick();
+    document.body.appendChild(d); setTimeout(()=>d.remove(),700);
+  }
+  document.addEventListener('pointermove',e=>{ if(e.pointerType!=='touch') trail(e.clientX,e.clientY); });
+  document.addEventListener('touchmove',e=>{ const t=e.touches[0]; if(t) trail(t.clientX,t.clientY); },{passive:true});
+
+  const parts=[]; let raf=0;
+  function loop(){
+    for(let i=parts.length-1;i>=0;i--){
+      const p=parts[i]; p.vy+=.45; p.x+=p.vx; p.y+=p.vy; p.life--;
+      p.el.style.transform='translate('+p.x+'px,'+p.y+'px) rotate('+p.life*12+'deg)';
+      p.el.style.opacity=Math.min(1,p.life/15);
+      if(p.life<=0||p.y>window.innerHeight+40){ p.el.remove(); parts.splice(i,1); }
+    }
+    raf=parts.length?requestAnimationFrame(loop):0;
+  }
+  function burst(x,y){
+    for(let i=0;i<12;i++){
+      const el=document.createElement('div'); el.className='pxb'; el.style.background=pick();
+      const s=8+Math.floor(Math.random()*5); el.style.width=el.style.height=s+'px';
+      document.body.appendChild(el);
+      parts.push({el,x,y,vx:(Math.random()-.5)*9,vy:-Math.random()*8-2,life:45+Math.random()*20});
+    }
+    if(!raf) raf=requestAnimationFrame(loop);
+  }
+  document.addEventListener('pointerdown',e=>{ if(/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return; burst(e.clientX,e.clientY); });
+}
+
+/* 3D tilt (mouse / pen only, skips the form and strip) */
+if(!reduce && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+  document.querySelectorAll('.card').forEach(c=>{
+    if(c.classList.contains('msg')||c.classList.contains('strip')) return;
+    c.addEventListener('pointermove',e=>{
+      const r=c.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      c.classList.add('tilting');
+      c.style.transform='perspective(800px) rotateX('+(-y*9)+'deg) rotateY('+(x*9)+'deg) translate(-3px,-3px)';
+    });
+    c.addEventListener('pointerleave',()=>{ c.classList.remove('tilting'); c.style.transform=''; });
+  });
+}
+
+/* optional profile photo */
+const pf=new Image();
+pf.onload=()=>{ const p=$('pic'); p.textContent=''; pf.alt='Pratyush Patra'; p.appendChild(pf); };
+pf.src='images/profile.jpg';
+
+$('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
